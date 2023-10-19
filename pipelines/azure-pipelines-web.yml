@@ -119,8 +119,8 @@ stages:
     displayName: Deploy Trainload
     environment: 'etf-stock-azure'
     variables:
-      projectName: 'SectionsEC'
-      webAppName: 'sectionsec'
+      projectName: 'TrainLoad'
+      webAppName: 'trainload'
     pool:
       vmImage: $(vmImageName)
     strategy:
