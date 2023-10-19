@@ -1,0 +1,25 @@
+.progress-circle {
+	height: 100%;
+	position: relative;
+	background-color: transparent;
+	border-color: white;
+	border-width: thin;
+	margin-bottom: 20px;
+}
+
+	.progress-circle > svg {
+		height: 100%;
+		display: block;
+	}
+
+	.vcenter{
+		display: flex;
+    align-items: center;
+	}
+
+	.progress{
+		margin-top: 2%;
+		margin-bottom: 0px !important;
+	}
+
+	

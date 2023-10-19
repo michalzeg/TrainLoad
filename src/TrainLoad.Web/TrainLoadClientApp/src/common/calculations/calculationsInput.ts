@@ -1,0 +1,12 @@
+import { StructureGeometry } from '../structure/structureGeometry';
+import { MeshInput } from './meshInput';
+import { MovingLoad } from '../movingLoad/movingLoad';
+import { TimeSettings } from '../time/timeSettings';
+
+
+export class CalculationsInput {
+    structureGeometry: StructureGeometry;
+    movingLoads: MovingLoad;
+    vertices: Array<MeshInput>;
+    timeSettings: TimeSettings;
+}

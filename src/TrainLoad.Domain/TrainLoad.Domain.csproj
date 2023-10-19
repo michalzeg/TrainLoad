@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MathNet.Numerics" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TrainLoad.Shared\TrainLoad.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Common">
+      <HintPath>..\..\Binaries\Common.dll</HintPath>
+    </Reference>
+    <Reference Include="FEM2D">
+      <HintPath>..\..\Binaries\FEM2D.dll</HintPath>
+    </Reference>
+    <Reference Include="FEM2DCommon">
+      <HintPath>..\..\Binaries\FEM2DCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="FEM2DDynamics">
+      <HintPath>..\..\Binaries\FEM2DDynamics.dll</HintPath>
+    </Reference>
+    <Reference Include="FEM2DOutput">
+      <HintPath>..\..\Binaries\FEM2DOutput.dll</HintPath>
+    </Reference>
+    <Reference Include="FEM2DStressCalculator">
+      <HintPath>..\..\Binaries\FEM2DStressCalculator.dll</HintPath>
+    </Reference>
+    <Reference Include="FEM2DTriangulation">
+      <HintPath>..\..\Binaries\FEM2DTriangulation.dll</HintPath>
+    </Reference>
+    <Reference Include="Triangle">
+      <HintPath>..\..\Binaries\Triangle.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
