@@ -1,5 +1,5 @@
 import { DrawingBase } from './drawing-base';
-import { SectionDrawingSettings } from './drawin-settings';
+import { SectionDrawingSettings } from './drawing-settings';
 import { Point } from '../../common/utils/point';
 import { Section } from '../../common/structure/section';
 

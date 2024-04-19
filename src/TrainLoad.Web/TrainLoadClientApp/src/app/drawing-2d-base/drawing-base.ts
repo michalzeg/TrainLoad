@@ -1,5 +1,5 @@
 declare var require: any;
-import { DrawingSettings } from './drawin-settings';
+import { DrawingSettings } from './drawing-settings';
 import { CanvasHelper } from '../../common/canvasHelper/canvasHelper';
 import { Point } from '../../common/utils/point';
 
