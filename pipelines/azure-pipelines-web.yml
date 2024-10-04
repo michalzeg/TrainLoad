@@ -50,6 +50,7 @@ stages:
         sudo curl -SL https://github.com/docker/compose/releases/download/1.29.2/docker-compose-linux-x86_64 -o $(dockerComposePath)/docker-compose
         sudo chmod 755 $(dockerComposePath)/docker-compose
     - task: DockerCompose@1
+      displayName: Build docker images
       inputs:
         containerregistrytype: 'Container Registry'
         dockerComposeFile: '$(Build.SourcesDirectory)/build/docker-compose.yml'
@@ -57,12 +58,6 @@ stages:
         qualifyImageNames: false
         action: 'Build services'
         dockerComposePath: $(dockerComposePath)/docker-compose
-    - task: PowerShell@2
-      displayName: Build docker images
-      inputs:
-        targetType: 'inline'
-        script: 'docker-compose build --no-cache --force-rm --parallel'
-        workingDirectory: 'build'
 - stage: Build
   displayName: Build stage
   jobs:
