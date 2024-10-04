@@ -45,13 +45,18 @@ stages:
     - task: DockerInstaller@0
       inputs:
         dockerVersion: '23.0.3'
-    - task: Bash@3
+    - bash: |
+        sudo mkdir $(dockerComposePath)
+        sudo curl -SL https://github.com/docker/compose/releases/download/1.29.2/docker-compose-linux-x86_64 -o $(dockerComposePath)/docker-compose
+        sudo chmod 755 $(dockerComposePath)/docker-compose
+    - task: DockerCompose@1
       inputs:
-        targetType: 'inline'
-        script: |
-              sudo mkdir $(dockerComposePath)
-              sudo curl -SL https://github.com/docker/compose/releases/download/1.29.2/docker-compose-linux-x86_64 -o $(dockerComposePath)/docker-compose
-              sudo chmod 755 $(dockerComposePath)/docker-compose
+        containerregistrytype: 'Container Registry'
+        dockerComposeFile: '$(Build.SourcesDirectory)/build/docker-compose.yml'
+        projectName: 'dockerbuild'
+        qualifyImageNames: false
+        action: 'Build services'
+        dockerComposePath: $(dockerComposePath)/docker-compose
     - task: PowerShell@2
       displayName: Build docker images
       inputs:
