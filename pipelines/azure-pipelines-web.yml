@@ -43,6 +43,12 @@ stages:
     - task: DockerInstaller@0
       inputs:
         dockerVersion: '23.0.3'
+    - task: DockerCompose@1
+      inputs:
+        containerregistrytype: 'Container Registry'
+        dockerComposeFile: './build/docker-compose.yml'
+        action: 'Run a Docker Compose command'
+        dockerComposeCommand: 'build'
     - task: PowerShell@2
       displayName: Build docker images
       inputs:
