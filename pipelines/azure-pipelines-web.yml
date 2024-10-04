@@ -43,12 +43,13 @@ stages:
     - task: DockerInstaller@0
       inputs:
         dockerVersion: '23.0.3'
-    - task: DockerCompose@1
+    - task: Bash@3
       inputs:
-        containerregistrytype: 'Container Registry'
-        dockerComposeFile: './build/docker-compose.yml'
-        action: 'Run a Docker Compose command'
-        dockerComposeCommand: 'build'
+        targetType: 'inline'
+        script: |
+              sudo mkdir $(dockerComposePath)
+              sudo curl -SL https://github.com/docker/compose/releases/download/1.29.2/docker-compose-linux-x86_64 -o $(dockerComposePath)/docker-compose
+              sudo chmod 755 $(dockerComposePath)/docker-compose
     - task: PowerShell@2
       displayName: Build docker images
       inputs:
