@@ -37,6 +37,8 @@ stages:
   displayName: Docker build stage
   jobs:
   - job: BuildDocker
+    variables:
+      dockerComposePath: /tmp/docker-compose
     pool:
       vmImage: $(vmLinuxImageName)
     steps:
